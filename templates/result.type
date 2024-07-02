@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+        <li>
+            {% if result.type == 'Video' %}
+            <strong>Video:</strong> <a href="{{ result.url }}">{{ result.title }}</a>
+            {% elif result.type == 'Channel' %}
+            <strong>Channel:</strong> <a href="{{ result.url }}">{{ result.title }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Search</a>
+</body>
+</html>
